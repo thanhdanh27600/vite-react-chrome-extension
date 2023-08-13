@@ -1,0 +1,33 @@
+{
+    "name": "Ilovechess",
+    "version": "0.1.0",
+    "description": "I Love Chess",
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "js/loader.js"
+            ],
+            "css": [
+                "css/depthbar.css",
+                "css/evalbar.css",
+                "css/material-icon.css"
+            ],
+            "matches": [
+                "https://www.chess.com/*"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "host_permissions": [
+        "https://www.chess.com/*"
+    ],
+    "action": {
+        "default_title": "Ilovechess's console",
+        "default_popup": "index.html"
+    },
+    "manifest_version": 3
+}
