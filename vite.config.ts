@@ -6,6 +6,7 @@ export default defineConfig({
 	plugins: [react()],
 	build: {
 		cssCodeSplit: false,
+		emptyOutDir: false,
 		rollupOptions: {
 			output: {
 				entryFileNames: "js/popup.js",

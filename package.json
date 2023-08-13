@@ -4,34 +4,34 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "yarn lint && concurrently \"nodemon --watch 'src/**/*' -e ts,tsx  --exec 'vite build'\" \" nodemon --watch 'src/ext/**/*' -e ts,tsx  --exec 'yarn ext'\"",
-    "build": "yarn lint && vite build && yarn ext",
-    "ext": "yarn rollup -c",
+    "dev": "concurrently \"nodemon --watch 'src/**/*' -e ts,tsx  --exec 'vite build'\" \" nodemon --watch 'src/ext/**/*' -e ts,tsx  --exec 'yarn ext'\"",
+    "build": "vite build",
+    "ext": "vite build --config vite.config.loader.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "export": "yarn lint && yarn build && yarn ext",
     "preview": "vite preview"
   },
   "dependencies": {
     "@rollup/plugin-typescript": "^11.1.2",
+    "path": "^0.12.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rollup": "^3.28.0",
-    "path": "^0.12.7"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.243",
     "@types/node": "^20.4.10",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
-    "@types/chrome": "^0.0.243",
     "concurrently": "^8.2.0",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "nodemon": "^3.0.1",
     "tslib": "^2.6.1",
     "typescript": "^5.1.6",
-    "nodemon": "^3.0.1",
     "vite": "^4.4.5"
   }
 }
