@@ -1,7 +1,7 @@
 {
-    "name": "Ilovechess",
+    "name": "My Extension",
     "version": "0.1.0",
-    "description": "I Love Chess",
+    "description": "My Extension With Vite + React",
     "permissions": [
         "storage",
         "tabs"
@@ -26,7 +26,7 @@
         "https://www.chess.com/*"
     ],
     "action": {
-        "default_title": "Ilovechess's console",
+        "default_title": "My Extension's Popup",
         "default_popup": "index.html"
     },
     "manifest_version": 3
