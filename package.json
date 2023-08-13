@@ -8,7 +8,7 @@
     "build": "vite build",
     "ext": "vite build --config vite.config.loader.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "export": "yarn lint && yarn build && yarn ext",
+    "export": "yarn lint && rm -rf dist && yarn build && yarn ext",
     "preview": "vite preview"
   },
   "dependencies": {
